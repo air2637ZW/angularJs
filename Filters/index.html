@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<script type="text/javascript" src="../angular.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+</head>
+<body>
+	<div ng-controller = "StudentController">
+		Enter first name: <input type="text" ng-model="student.firstName"><br>
+		Enter last name: <input type="text" ng-model="student.lastName"><br>
+		<br>
+		You are entering: {{student.fullName()}}
+		<br>
+		Name in uppercase: {{student.fullName() | uppercase}}
+	</div>
+
+	<div ng-controller = "StudentController">
+		Enter subject: <input type="text" ng-model="subjectName"/><br>
+		Subject:<br>
+		<ul>
+			<li ng-repeat="subject in student.subjects | filter: subjectName" >
+				{{subject.name + ", marks: " + subject.marks}}
+			</li>
+		</ul>
+	</div>	
+</body>
+</html>

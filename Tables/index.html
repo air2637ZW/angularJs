@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<script type="text/javascript" src="../angular.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+
+<style>
+table, th , td {
+   border: 1px solid grey;
+   border-collapse: collapse;
+   padding: 5px;
+}
+table tr:nth-child(odd) {
+   background-color: #f2f2f2;
+}
+table tr:nth-child(even) {
+   background-color: #ffffff;
+}
+</style>
+
+</head>
+<body ng-controller = "StudentController">
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Mark</th>
+		</tr>
+		<tr ng-repeat="subject in student.subjects">
+			<td> {{subject.name}} </td>
+			<td> {{subject.marks}} </td>
+		</tr>
+	</table>	
+</body>
+</html>
