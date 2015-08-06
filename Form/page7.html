@@ -1,0 +1,51 @@
+<html ng-app>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="../angular.min.js"></script>
+    <script type="text/javascript" src="app2.js"></script>
+    <style>
+    input[type="text"].myFocus{
+    background-color: yellow;
+    };
+    input[type="text"].myBlur{
+    background-color: green;
+    };
+    .strike {
+    text-decoration: line-through;
+    color: red;
+    }
+    .bold {
+    font-weight: bold;
+    }
+    .red {
+    color: red;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="well span4" style="margin-top:20px;" ng-init="focus=false; blur=true;">
+      <input type="text" ng-class="{myFocus: focus, myBlur: blur}" ng-focus="focus = true;">
+    </div>
+    <div>
+      <p ng-class="{strike:deleted, bold:important, red:error}">Map Syntax Example</p>
+      <input type="checkbox" ng-model="deleted"/>Deleted<br/>
+      <input type="checkbox" ng-model="important"/>Important<br/>
+      <input type="checkbox" ng-model="error"/>Error<br/>
+      Deleted: {{deleted}} / Important: {{important}} / Error: {{error}}
+    </div>
+    <div>
+      <p ng-class="{strike: deleted, bold: important, red: error}">Map Syntax Example</p>
+      <input type="checkbox" ng-model="deleted"> deleted (apply "strike" class)<br>
+      <input type="checkbox" ng-model="important"> important (apply "bold" class)<br>
+      <input type="checkbox" ng-model="error"> error (apply "red" class)
+      <hr>
+      <p ng-class="style">Using String Syntax</p>
+      <input type="text" ng-model="style" placeholder="Type: bold strike red">
+      <hr>
+      <p ng-class="[style1, style2, style3]">Using Array Syntax</p>
+      <input ng-model="style1" placeholder="Type: bold, strike or red"><br>
+      <input ng-model="style2" placeholder="Type: bold, strike or red"><br>
+      <input ng-model="style3" placeholder="Type: bold, strike or red"><br>
+    </div>
+  </body>
+</html>

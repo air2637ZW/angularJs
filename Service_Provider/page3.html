@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <script type="text/javascript" src="../angular.min.js"></script>
+    <script type="text/javascript">
+    	var myApp = angular.module('myApp',[]);
+    	myApp.controller('ScrollController', ['$scope','$location','$anchorScroll',
+    	 function($scope,$location,$anchorScroll){
+    		$scope.gotoBottom = function(){
+    			$location.hash('anotherBottom');
+    			$anchorScroll();
+    		};
+    		$scope.gotoTop = function(){
+    			$location.hash('topPosition');
+    			$anchorScroll();
+    		}
+    	}]);	
+    </script>
+    <style type="text/css">
+		#scrollArea{
+			height: 2800px;
+			overflow: auto;
+			background-color: green;
+		}
+		#pp{
+			display: block;
+			margin-top: 2000px;
+			background-color: red;
+		}
+		#anotherBottom{
+			margin-top:  2000px;
+		}
+    </style>
+</head>
+<body>
+	<div id="scrollArea" ng-controller="ScrollController">
+		<a id="topPosition"  ng-click="gotoBottom()">Go to bottom</a><br>
+		<!--
+		<a id="pp"></a>You are at the bottom.
+		-->
+		<a id="anotherBottom" ng-click="gotoTop()">I am another bottom</a>
+	</div>
+</body>
+</html>

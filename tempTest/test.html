@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="../angular.min.js"></script>
+    <script src="../angular-ui-router.min.js"></script>
+    <script src="../angular-animate.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-app="myApp">
+	<!--
+	<div hello></div>
+
+	<hello>
+		<div>Hello there</div>
+		<div> What?</div>
+	</hello>
+	-->
+	<div ng-controller="myCtrl">
+		
+	
+	<good>Click me!</good>
+	{{display}}
+	<button ng-click="loadMyData()">Click me</button>
+
+	</div>
+	<!--
+	<div ng-controller="myCtrl">
+		<loadData></loadData>
+		{{display}}	
+	</div>
+	-->
+</body>
+</html>

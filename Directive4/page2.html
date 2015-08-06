@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="../angular.min.js"></script>
+		<script type="text/javascript" src="app2.js"></script>
+	</head>
+	<body>
+		<div ng-controller="myController">
+			<accordion>
+				<expander ng-repeat="expander in expanders" expander-title="expander.title" >
+					{{expander.text}}
+				</expander>
+			</accordion>
+		</div>
+	</body>
+</html>

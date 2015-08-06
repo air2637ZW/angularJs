@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <script type="text/javascript" src="../angular.min.js"></script>
+    <script type="text/javascript" src="app2.js"></script>
+</head>
+<body>
+	<div ng-controller="myCtrl">
+		<label>Username:</label>
+		<input type="text" ng-model="username" placeholder="plz enter username"/>
+		<pre ng-show="username">{{users}}</pre>
+	</div>
+</body>
+</html>

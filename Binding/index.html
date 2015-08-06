@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="UserInfoApp">
+	<head>
+		<title></title>
+		<script type="text/javascript" src="../angular.min.js"></script>
+		<script type="text/javascript" src="app.js"></script>
+		<!-- 新 Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="../bootstrap.min.css">
+		<link rel="stylesheet" href="Css1.css">
+		<script type="text/javascript" src="Form.js"></script>
+	</head>
+	<body>
+		<div ng-controller="CSSCtrl">
+			<p class="text-{{color}}">test css style</p>
+			<button class="btn btn-default" ng-click="setGreen()">Set Green Color</button>
+		</div>
+
+
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<div class="panel-title">Binding</div>
+			</div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-12">
+						<form class="form-horizontal" role="form" ng-controller="UserInfoCtrl">
+							<div class="form-group">
+								<label for="" class="col-md-2" control-label>Email: </label>
+								<div class="col-md-10">
+									<input type="email" class="form-control" placeholder="enter your email" ng-model="userInfo.email"/> 	
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="" class="col-md-2" control-label >Password: </label>
+								<div class="col-md-10">
+									<input type="password" class="form-control" placeholder="enter your password" ng-model="userInfo.password"/> 	
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="col-md-offset-2 col-md-10">
+									<div class="checkbox">
+										<label>
+											<input type="checkbox" ng-model="userInfo.autoLogin">Auto Login
+										</label>
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="col-md-offset-2 col-md-10">
+									<button class="btn btn-default" ng-click="getFormData()">Submit</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

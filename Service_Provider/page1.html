@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <script type="text/javascript" src="../angular.min.js"></script>
+    <script type="text/javascript" src="app1.js"></script>
+</head>
+<body>
+	<div ng-controller="myCtrl">
+		<ul>
+			<li ng-repeat="user in users">
+				{{user.name}}
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

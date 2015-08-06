@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="../angular.min.js"></script>
+		<script type="text/javascript" src="app.js"></script>
+		
+	</head>
+
+	<body ng-app="myApp">
+		<form name="anotherForm" ng-controller="anotherCtrl">
+			Name: <input type="text" name="name" ng-model="user.name"  required/> {{user.name}}<br/> 
+			E-mail: <input type="email" name="email" ng-model="user.email"  required/> {{user.email}}<br/>
+			Gender: 
+			<input type="radio" ng-model="user.gender" value="male" required/>Male
+			<input type="radio" ng-model="user.gender" value="female" required/>Female<br/>
+
+			<input type="checkbox" ng-model="user.agree" required/> I agree:<br/>
+			Please agree and sign. 
+			<br/>
+
+			<button ng-disabled="!anotherForm.name.$valid" ng-click="resetFrom()">Reset</button>
+			<button ng-disabled="true" >Submit</button>
+
+			<tt>anotherForm.name.$valid: {{anotherForm.name.$valid}}</tt> <br/>
+			<tt>user: {{user}}</tt>
+		</form>
+	</body>
+
+</html>

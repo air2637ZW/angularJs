@@ -1,0 +1,33 @@
+<!doctype html>
+<html ng-app="myApp">
+    <head>
+         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+         <script type="text/javascript" src="../angular.min.js"></script>
+    </head>
+    <body>
+
+        <div ng-controller="myAppCtrl">
+            ctrl:<input type="text" ng-model="testname"><br>
+            directive:<xingoo name="testname"></xingoo>
+        </div>
+
+        <script type="text/javascript">
+            var myAppModule = angular.module("myApp",[]);
+
+            myAppModule.controller("myAppCtrl",['$scope',function($scope){
+                $scope.testname="my name is xingoo";
+            }]);
+
+            myAppModule.directive("xingoo",function(){
+                return {
+                    restrict:'AE',
+                    scope:{
+                        name:'='
+                    },
+                    template:'<input type="text" ng-model="name">',
+                    repalce:true
+                }
+            })
+        </script>
+    </body>
+</html>

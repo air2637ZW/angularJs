@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<script type="text/javascript" src="../angular.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+</head>
+<body>
+	<form name="myForm">
+		<input type="text" name="name" ng-model="name" required/>
+		<input type="password" name="password" ng-model="password" required/>
+		<br/>
+		<p>!myForm.name.$valid </p>{{!myForm.name.$valid }}<br/>
+		<p>!myForm.password.$valid</p>{{!myForm.password.$valid}}<br/>
+		<p>Comibine</p>{{!myForm.name.$valid || !myForm.password.$valid}}<br/>
+		<p>myForm.$invalid</p>{{myForm.$invalid}}<br/>
+		<button ng-disabled="!myForm.name.$valid || !myForm.password.$valid">Click</button>
+	</form>
+</body>
+</html>

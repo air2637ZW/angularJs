@@ -1,0 +1,60 @@
+<html ng-app="inputExample">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="../angular.min.js"></script>
+    <script type="text/javascript" src="app2.js"></script>
+  </head>
+  <body>
+    <div ng-controller="ExampleController">
+      <form name="myForm">
+        User name: <input type="email" name="userName" ng-model="user.name" ng-change="myAlert()" ng-blur="myAlert()" required>
+        <span class="error" ng-show="myForm.userName.$error.required">
+        Required!</span><br>
+        Last name: <input type="text" name="lastName" ng-model="user.last"
+        ng-minlength="3" ng-maxlength="10" ng-change="myAlert()">
+        <span class="error" ng-show="myForm.lastName.$error.minlength">
+        Too short!</span>
+        <span class="error" ng-show="myForm.lastName.$error.maxlength">
+        Too long!</span><br>
+        
+        Value1: <input type="checkbox" ng-model="value1"><br/>
+        Value2: <input type="checkbox" ng-model="value2" ng-true-value="'yes'" ng-false-value="'no'"><br/>
+        <tt>vaule1= {{value1}}</tt><br>
+        <tt>vaule2= {{value2}}</tt><br>
+        <hr/>
+
+        Pick a date in 2015:<br/>
+        <input type="date" ng-model="myDate" name="myDate" required min="2015-01-01" max="2015-12-31">
+        <span ng-show="myForm.myDate.$error.required">Required</span><br/>
+        <span ng-show="myFrom.myDate.$error.date">Invalid</span><br/>
+        <hr>
+
+        Pick a date in 2016<br>
+        <input type="datetime-local" ng-model="myDatetimeLocal" name="myDatetimeLocal" required/>
+        <span ng-show="myForm.myDatetimeLocal.$error.required">Required</span>
+        <span ng-show="myForm.myDatetimeLocal.$error.datetimelocal">Invalid</span>
+        <hr>
+        <window ng-blur="myAlert()"/>
+       
+      </form>
+      <hr>
+      <tt>user = {{user}}</tt><br/>
+      <tt>myForm.userName.$valid = {{myForm.userName.$valid}}</tt><br>
+      <tt>myForm.userName.$error = {{myForm.userName.$error}}</tt><br>
+      <tt>myForm.lastName.$valid = {{myForm.lastName.$valid}}</tt><br>
+      <tt>myForm.lastName.$error = {{myForm.lastName.$error}}</tt><br>
+      <tt>myForm.$valid = {{myForm.$valid}}</tt><br>
+      <tt>myForm.$error.required = {{!!myForm.$error.required}}</tt><br>
+      <tt>myForm.$error.minlength = {{!!myForm.$error.minlength}}</tt><br>
+      <tt>myForm.$error.maxlength = {{!!myForm.$error.maxlength}}</tt><br>
+      <tt>myForm.lastName: {{user.last}}</tt>
+      <hr/> 
+      <tt>myForm.myDate.$error.required {{myForm.myDate.$error.required}}</tt><br>
+      <tt>myFrom.myDate.$error.date {{myFrom.myDate.$error.date}}</tt><br>
+      <hr>
+      <tt>myForm.myDatetimeLocal.$error.required: {{myForm.myDatetimeLocal.$error.required}}</tt><br>
+      <tt>myForm.myDatetimeLocal.$error.datetimelocal: {{myForm.myDatetimeLocal.$error.datetimelocal}}</tt>
+    </div>
+    
+  </body>
+</html>

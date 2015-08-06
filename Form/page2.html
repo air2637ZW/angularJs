@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="../angular.min.js"></script>
+		<script type="text/javascript" src="app.js"></script>
+		<style>
+		.my-form {
+		-webkit-transition:all linear 0.5s;
+		transition:all linear 0.5s;
+		background: transparent;
+		}
+		.my-form.ng-invalid {
+		background: red;
+		}
+		</style>
+	</head>
+
+	<body ng-app="myApp">
+		<form name="myForm" ng-controller="testCtrl" class="my-form">
+			userType: <input name="input" ng-model="userType" required>
+			<span class="error" ng-show="myForm.input.$error.required">Required!</span><br>
+			<tt>userType = {{userType}}</tt><br>
+			<tt>myForm.input.$valid = {{myForm.input.$valid}}</tt><br>
+			<tt>myForm.input.$error = {{myForm.input.$error}}</tt><br>
+			<tt>myForm.$valid = {{myForm.$valid}}</tt><br>
+			<tt>myForm.$error.required = {{!!myForm.$error.required}}</tt><br>
+		</form>
+	</body>
+
+</html>
